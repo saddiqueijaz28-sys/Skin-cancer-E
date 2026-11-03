@@ -70,7 +70,7 @@ if uploaded_file is not None:
     except Exception as e:
         st.sidebar.error(f"Error loading file: {e}")
         df = load_sample_data()
--else:
+else:
     st.sidebar.info("No file uploaded. Using synthetic skin cancer dataset for demonstration.")
     df = load_sample_data()
 
@@ -160,7 +160,7 @@ with tab3:
     st.subheader("Correlation Heatmap")
     if len(numeric_cols) > 1:
         corr = df[numeric_cols].corr()
-        fig_corr = px.imshow(corr, text_auto=True, aspect="auto", color_continuoussclae="RdBu_r", title="Correlation Matrix of Numeric Features")
+        fig_corr = px.imshow(corr, text_auto=True, aspect="auto", color_continuous_scale="RdBu_r", title="Correlation Matrix of Numeric Features")
         st.plotly_chart(fig_corr, use_container_width=True)
 
 # --- TAB 4: SUMMARY INSIGHTS ---
